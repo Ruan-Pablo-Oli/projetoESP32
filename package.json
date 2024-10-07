@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "device": "nodemon server.js",
-    "start" : "node server.js"
+    "backend": "nodemon server.js",
+    "frontend": "cd frontend && npm start",
+    "device": "concurrently \"npm run backend\" \"npm run frontend\" ",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,16 +14,20 @@
   "description": "Sistema de monitoramento para devices ESP",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "concurrently": "^9.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
+    "lucide-react": "^0.447.0",
     "mongoose": "^8.7.0",
     "slug": "^9.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
   },
   "engines": {
-  "node": "18.20.4"
-}
-
+    "node": "18.20.4"
+  }
 }
