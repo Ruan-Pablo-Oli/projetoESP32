@@ -1,17 +1,24 @@
 import React from 'react'
 import NavBar from './paginas/components/NavBar'
-import HeroSection from './paginas/components/HeroSection'
-
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import HomePage from './paginas/components/HomePage'
+import { Medidas } from './paginas/components/Medidas'
+import Administracao from './paginas/components/Administracao'
+import Mensagens from './paginas/components/Mensagens'
 
 
 function App(){
   return (
-    <div>
+    <Router>
       <NavBar></NavBar>
-      <div className="max-w-7xl mx-auto pt-20 px-6">
-        <HeroSection></HeroSection>
-      </div>
-    </div>
+      <Routes>
+         <Route path='/' element = {<HomePage></HomePage>}/>
+         <Route path='/Medidas' element={<Medidas></Medidas>}></Route>
+         <Route path='/Administracao' element={<Administracao></Administracao>}></Route>
+         <Route path='/Mensagens' element={<Mensagens></Mensagens>}></Route>
+
+      </Routes>
+    </Router>
   )
 }
 

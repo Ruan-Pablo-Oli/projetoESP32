@@ -17,8 +17,12 @@ const NavBar = () =>{
                         <div className="container px-4 mx-auto relative text-sm">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center flex-shrink 0">
-                        <img className="h-10 w-10 mr-2 rounded-md" src ={logo} alt= "logo"></img>
+                        <img className="h-10 w-10 mr-2 rounded-md" src ={logo} alt= "logo">
+                        </img>
+                        <a href="/">
                         <span className="text-xl tracking-tight">ESP32</span>
+
+                        </a>
                     </div>
                     <ul className="hidden lg:flex ml-14 space-x-12">
                         {navItems.map((item,index) => (
