@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 const api = require('./rotas/')
 app.use('/api',api)
 
-const PORT = process.env.PORT
+const PORT = 3080
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('frontend/build'))
