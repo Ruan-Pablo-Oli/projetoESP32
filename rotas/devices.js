@@ -69,7 +69,7 @@ router.put('/:id',async (req,res)=>{
 
 router.get('/:id', async (req,res) => {
     try{
-        const device = await Device.findOne(
+        const device = await Device.findById(
             {_id : req.params.id}
         )
 
@@ -80,7 +80,7 @@ router.get('/:id', async (req,res) => {
     }catch(err){
         res.json({
             sucess:true,
-            message:"Não foi possível obter o device"
+            message:err
         })
     }
 })

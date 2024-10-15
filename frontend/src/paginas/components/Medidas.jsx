@@ -1,6 +1,6 @@
 import React from 'react'
 import {useApi} from '../../hooks/useApi'
-
+import {Link} from 'react-router-dom'
 
 export const Medidas = () => {
   
@@ -23,7 +23,8 @@ export const Medidas = () => {
           <div className="flex">
             <div className="flex mx-6  items-center w-10 h-10 p-2 text-blue-700 ">
             </div>
-            <button  className="text-blue-700 bg-neutral-800 rounded-lg p-10 mb-10 mt-10">
+            <Link to ={`/medidas/${dispositivo._id}`}>
+            <div  className="text-blue-700 bg-neutral-800 rounded-lg p-10 mb-10 mt-10">
             <h5 className="flex mt-1 mb-6 p-1 justify-center text-xl bg-neutral-900 rounded-lg">
               {dispositivo.nome}
             </h5>
@@ -43,10 +44,11 @@ export const Medidas = () => {
 
             </p>            
             <p>
-              Kwh: {dispositivo.kwh}
+              fp: {dispositivo.fp}
 
             </p>
-            </button>
+            </div>
+            </Link>
             </div>
             <div>
             </div>
