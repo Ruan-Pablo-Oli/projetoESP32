@@ -20,10 +20,12 @@ router.get('/',async (req,res)=>{
 router.post('/', async (req,res)=>{
     const device = new Device({
         nome:req.body.nome,
+        email:req.body.email,
         kwh:req.body.kwh,
         corrente: req.body.corrente,
         voltagem: req.body.voltagem,
-        fp: req.body.fp
+        fp: req.body.fp,
+        imagem:req.body.imagem
     })
     try{
         const NovoDevice = await device.save()
