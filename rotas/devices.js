@@ -66,23 +66,6 @@ router.put('/:id',async (req,res)=>{
 
 
 
-router.get('/:email', async (req,res) => {
-    try{
-        const listaMedidas = await Device.find(
-            {email : req.params.email}
-        )
-
-        res.json({
-            sucess:true,
-            message:listaMedidas
-        })
-    }catch(err){
-        res.json({
-            sucess:true,
-            message:err
-        })
-    }
-})
 
 router.get('/detalhes/:id', async (req,res) => {
     try{
