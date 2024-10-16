@@ -32,20 +32,7 @@ export const Medidas = () => {
             <img src={dispositivo.imagem} alt="imagem" className="ml-20 rounded-full rounded-lg w-1/2 mr-5  mb-10 border border-purple-700"></img>
             </p>
             <p>
-              Kwh: {dispositivo.kwh}
-
-            </p>
-            <p>
-              corrente: {dispositivo.corrente}
-
-            </p>
-            <p>
-              voltagem: {dispositivo.voltagem}
-
-            </p>            
-            <p>
-              fp: {dispositivo.fp}
-
+              {dispositivo.descricao}
             </p>
             </div>
             </Link>

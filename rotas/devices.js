@@ -21,11 +21,9 @@ router.post('/', async (req,res)=>{
     const device = new Device({
         nome:req.body.nome,
         email:req.body.email,
-        kwh:req.body.kwh,
-        corrente: req.body.corrente,
-        voltagem: req.body.voltagem,
-        fp: req.body.fp,
-        imagem:req.body.imagem
+        descricao:req.body.descricao,
+        medidas:req.body.medidas,
+        imagem:req.body.imagemno
     })
     try{
         const NovoDevice = await device.save()
@@ -67,7 +65,26 @@ router.put('/:id',async (req,res)=>{
 })
 
 
-router.get('/:id', async (req,res) => {
+
+router.get('/:email', async (req,res) => {
+    try{
+        const listaMedidas = await Device.find(
+            {email : req.params.email}
+        )
+
+        res.json({
+            sucess:true,
+            message:listaMedidas
+        })
+    }catch(err){
+        res.json({
+            sucess:true,
+            message:err
+        })
+    }
+})
+
+router.get('/detalhes/:id', async (req,res) => {
     try{
         const device = await Device.findById(
             {_id : req.params.id}
