@@ -7,8 +7,8 @@ export const Detalhes = () => {
 
 
   return (
-    <div className="flex items-center justify-center h-screen bg-neutral-900">
-    <div className="bg-neutral-700 p-4 rounded-lg shadow-md mt-24 w-1/3">
+    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+    <div className="bg-neutral-700 p-4 rounded-lg shadow-md mt-24 sm:1/2 lg:w-1/3 mx-auto">
       <h1 className="bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text text-center text-2xl">{data?.data?.message?.nome}</h1>
         <table className="w-full border border-purple-800 rounded-md divide-y divide-purple-800 text-center">
         <thead>

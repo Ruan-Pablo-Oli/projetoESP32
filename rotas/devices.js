@@ -23,7 +23,7 @@ router.post('/', async (req,res)=>{
         email:req.body.email,
         descricao:req.body.descricao,
         medidas:req.body.medidas,
-        imagem:req.body.imagemno
+        imagem:req.body.imagem
     })
     try{
         const NovoDevice = await device.save()

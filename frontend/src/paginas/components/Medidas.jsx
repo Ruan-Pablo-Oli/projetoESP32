@@ -19,9 +19,9 @@ export const Medidas = () => {
       </div>
       <div className="flex flex-wrap mt-10 lg:mt-20">
       {data?.data?.message?.map((dispositivo,index)=>(
-          <div key={index} className="w-full sm:1/2 lg:w-1/3">
+          <div key={index} className="w-full sm:1/2 lg:w-1/4">
           <div className="flex">
-            <div className="flex mx-6  items-center w-10 h-10 p-2 text-blue-700 ">
+            <div className="flex mx-20 items-center w-10 h-10 p-2 text-blue-700 ">
             </div>
             <Link to ={`/medidas/${dispositivo._id}`}>
             <div  className="text-blue-700 bg-neutral-800 rounded-lg p-10 mb-10 mt-10">
