@@ -2,7 +2,7 @@ import React from 'react'
 import {useApi} from '../../hooks/useApi'
 function ListaDevices() {
 
-    const {data} = useApi('/devices')
+  const {data} = useApi('/devices')
   return (
     <div>
         <table className="w-full border border-purple-900 rounded-md divide-y divide-purple-800 text-center">
@@ -14,14 +14,17 @@ function ListaDevices() {
                  </tr>
              </thead>
         <tbody>
-            {data?.data?.message?.map(device =>{
+            {data?.data?.message?.map((device,index) =>{
                 return(
-                    <tr>
+                    <tr key={index}>
                     <td className='border border-purple-800'> <img src={device.imagem} alt="imagem" className="rounded-full rounded-lg w-14 relative border mx-auto border-purple-700"></img></td>
                     <td className='border border-purple-800'>{device.nome}</td>
-                    <td className='border border-purple-800'>{device.medidas.map(med =>{
+                    <td className='border border-purple-800'>{device.medidas.map((med,index) =>{
                       return (
-                        <div>{med.data}</div>
+                        <div key={index}>
+                          <div>{med.data}</div>
+
+                        </div>
                       )
                     })}</td>
                   </tr>

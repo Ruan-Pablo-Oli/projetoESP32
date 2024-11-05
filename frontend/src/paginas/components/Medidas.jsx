@@ -21,7 +21,7 @@ export const Medidas = () => {
       {data?.data?.message?.map((dispositivo,index)=>(
           <div key={index} className="w-full sm:1/2 lg:w-1/4">
           <div className="flex">
-            <div className="flex mx-20 items-center w-10 h-10 p-2 text-blue-700 ">
+            <div className="flex mx-15 items-center w-10 h-10 p-2 text-blue-700 ">
             </div>
             <Link to ={`/medidas/${dispositivo._id}`}>
             <div  className="text-blue-700 bg-neutral-800 rounded-lg p-10 mb-10 mt-10">
@@ -29,7 +29,7 @@ export const Medidas = () => {
               {dispositivo.nome}
             </h5>
             <p>
-            <img src={dispositivo.imagem} alt="imagem" className="ml-20 rounded-full rounded-lg w-1/2 mr-5  mb-10 border border-purple-700"></img>
+            <img src={dispositivo.imagem} alt="imagem" className="mx-auto rounded-full rounded-lg w-1/2 mb-10 border border-purple-700"></img>
             </p>
             <p>
               {dispositivo.descricao}
