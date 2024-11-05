@@ -17,6 +17,10 @@ export const deleteRegistro = (id) =>{
 }
 
 
-export const editRegistro = () =>{
-    console.log("Chamaou edit")
+export const editRegistro = (id,{nome,descricao,imagem}) =>{
+    axios.patch(`/api/devices/${id}`,{nome,descricao,imagem})
+    .then(response =>
+        console.log("Editado",response)
+    )
+    .catch( err => console.log(err))
 }

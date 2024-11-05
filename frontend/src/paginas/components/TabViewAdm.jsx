@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ListaDevices from './ListaDevices';
 import AdmDevices from './AdmDevices';
+
+import NovoDevice from './NovoDevice';
 export const TabViewAdm = () => {
 const [activeTab, setActiveTab] = useState(1);
   return (
@@ -35,9 +37,9 @@ const [activeTab, setActiveTab] = useState(1);
 
       {/* Tab Content */}
       <div className="p-4 w-full">
-        {activeTab === 1 && <div><ListaDevices></ListaDevices></div>}
-        {activeTab === 2 && <div><AdmDevices></AdmDevices></div>}
-        {activeTab === 3 && <div>This is the content for Tab 3.</div>}
+        {activeTab === 1 && <div><ListaDevices setActiveTab={setActiveTab}></ListaDevices></div>}
+        {activeTab === 2 && <div><AdmDevices setActiveTab={setActiveTab}></AdmDevices></div>}
+        {activeTab === 3 && <div><NovoDevice></NovoDevice></div>}
       </div>
     </div>  )
 }

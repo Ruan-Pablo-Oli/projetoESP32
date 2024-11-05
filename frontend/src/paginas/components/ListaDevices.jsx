@@ -1,9 +1,12 @@
 import React from 'react'
 import {useApi} from '../../hooks/useApi'
-function ListaDevices() {
+
+
+const  ListaDevices = ({setActiveTab}) => {
 
   const {data} = useApi('/devices')
   return (
+    data?.data?.message.length > 0 ?
     <div>
         <table className="w-full border border-purple-900 rounded-md divide-y divide-purple-800 text-center">
             <thead>
@@ -33,6 +36,12 @@ function ListaDevices() {
         </tbody>
         </table>
     </div>
+    : 
+    <div className="text-center">
+      <button onClick= {() => setActiveTab(3)}className="mt-4 mr-5 bg-gradient-to-r from-purple-500 to-blue-900 text-white px-4 py-3 rounded-full hover:animate-pulse">
+            Novo device
+      </button>
+      </div>
   )
 }
 

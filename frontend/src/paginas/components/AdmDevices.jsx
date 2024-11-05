@@ -7,7 +7,7 @@ import { editRegistro,deleteRegistro } from '../../services/api'
 
 
 
-const AdmDevices = () => {   
+const AdmDevices = ({setActiveTab}) => {   
     const {data} = useApi('/devices')
     const [showModal, setShowModal] = useState(false);
     const [id,setId] = useState()
@@ -20,8 +20,8 @@ const AdmDevices = () => {
       deleteRegistro(id);
     }
     
-    const edit = () =>{
-      editRegistro()
+    const edit = (id,data) =>{
+      saveAndEdit(id,data)
     }
 
     const [option,setOption] = useState({
@@ -59,9 +59,19 @@ const AdmDevices = () => {
     };
 
 
+    const saveAndEdit = (id,data) => {
+      const newRegDevice = {
+        nome : data.nome,
+        descricao: data.descricao,
+        imagem: data.imagem
+      }
+      editRegistro(id,newRegDevice)
+    }
+
   
     
   return (
+    data?.data?.message?.length  > 0 ? 
     <table className="w-full border border-purple-900 rounded-md divide-y divide-purple-800 text-center">
         <thead>
              <tr>
@@ -99,7 +109,12 @@ const AdmDevices = () => {
         })}
     </tbody>
     </table>
-
+    :
+    <div className="text-center">
+        <button onClick={() => setActiveTab(3)} className="mt-4 mr-5 bg-gradient-to-r from-purple-500 to-blue-900 text-white px-4 py-3 rounded-full hover:animate-pulse">
+          Novo device
+        </button>
+    </div>
 );
 }
 

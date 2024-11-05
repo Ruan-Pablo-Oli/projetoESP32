@@ -6,8 +6,12 @@ const Modal = ({show,onClose,optionNow, id,name,description,image,setId,setImage
 
     const executeAction = (id) =>{
       onClose();
-      
-      optionNow.callBack(id);
+      const data = {
+        nome:name,
+        descricao:description,
+        imagem:image
+      }
+      optionNow.callBack(id,data);
     }
 
     return(
