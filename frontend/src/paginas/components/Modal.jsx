@@ -27,6 +27,7 @@ const Modal = ({show,onClose,optionNow, id,name,description,image,setId,setImage
             Cancelar
           </button>
           <button 
+            type="submit"
             onClick={() => executeAction(id)} 
             className={` ${optionNow.mostraBody? 'mt-4 mr-5 bg-gradient-to-r from-red-500 to-red-900 bg-blue-500 text-white px-4 py-2 rounded ' : 'mt-4 mr-5 bg-gradient-to-r from-green-500 to-green-900 bg-green-500 text-white px-4 py-2 rounded' } hover:animate-pulse`}
           >

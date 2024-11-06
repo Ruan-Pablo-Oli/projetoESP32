@@ -43,13 +43,13 @@ router.post('/', async (req,res)=>{
         nome:req.body.nome,
         email:req.body.email,
         descricao:req.body.descricao,
-        medidas:req.body.medidas,
-        imagem:req.body.imagem
+        imagem: req.body.imagem,
+        medidas:req.body.medidas
     })
     try{
         const NovoDevice = await device.save()
         res.json({
-            sucess:false,
+            sucess:true,
             message:NovoDevice
         })
     }catch{

@@ -5,13 +5,15 @@ const api = axios.create({
 })
 
 
+const source = axios.CancelToken.source();
+
 export default api
 
 export const deleteRegistro = (id) =>{
     axios.delete(`/api/devices/${id}`)
     .then(response =>{
         console.log(response)
-        return response
+        window.location.reload()
     })
     .catch(err => console.log(err))
 }
@@ -19,8 +21,26 @@ export const deleteRegistro = (id) =>{
 
 export const editRegistro = (id,{nome,descricao,imagem}) =>{
     axios.patch(`/api/devices/${id}`,{nome,descricao,imagem})
-    .then(response =>
+    .then(response =>{
         console.log("Editado",response)
-    )
+        window.location.reload()
+
+    })
     .catch( err => console.log(err))
+}
+
+
+
+
+export const addRegistro = ({nome,email,descricao,imagem}) => {
+
+    axios.post(`/api/devices`, { nome, email, descricao, imagem }, {
+        cancelToken: source.token
+    }).then(response => {
+            console.log("Adicionado", response)
+            window.location.reload()
+        }
+        ).catch(err => 
+            console.log(err)
+        )
 }
