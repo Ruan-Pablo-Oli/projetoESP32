@@ -17,19 +17,17 @@ export const Medidas = () => {
             {" "} Dispostivos</span>
         </h2>
       </div>
-      <div className="flex flex-wrap mt-10 lg:mt-20">
+      <div className="flex flex-wrap items-center justify-center  mt-10 lg:mt-20">
       {data?.data?.message?.map((dispositivo,index)=>(
-          <div key={index} className="w-full sm:1/2 lg:w-1/4">
-          <div className="flex">
-            <div className="flex mx-15 items-center w-10 h-10 p-2 text-blue-700 ">
-            </div>
+          <div key={index} className="sm:1/2 lg:w-1/6 ">
+          <div className="flex flex-wrap " >
             <Link to ={`/medidas/${dispositivo._id}`}>
-            <div  className="text-blue-700 bg-neutral-800 rounded-lg p-10 mb-10 mt-10">
+            <div  className="text-blue-700 bg-neutral-800 rounded-lg  p-10 mb-10 mt-10">
             <h5 className="flex mt-1 mb-6 p-1 justify-center text-xl bg-neutral-900 rounded-lg">
               {dispositivo.nome}
             </h5>
             <p>
-            <img src={dispositivo.imagem} alt="imagem" className="mx-auto rounded-full rounded-lg w-1/2 mb-10 border border-purple-700"></img>
+            <img src={dispositivo.imagem} alt="imagem" className="mx-auto rounded-full w-40 h-40 rounded-lg object-cover mb-10 border border-purple-700"></img>
             </p>
             <p>
               {dispositivo.descricao}

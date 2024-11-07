@@ -16,7 +16,7 @@ const NovoDevice = () => {
 
 
   return (
-      <div className="flex justify-center items-center h-1/2 ">
+      <div className="  flex  flex-col items-center justify-center h-1/2 ">
           <form className="bg-neutral-900 p-6 rounded shadow-md w-full max-w-md">
               <div className="mb-4">
                   <label className="block text-purple-800 text-sm font-bold mb-2" htmlFor="Email">

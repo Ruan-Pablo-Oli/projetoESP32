@@ -6,7 +6,7 @@ import { Medidas } from './paginas/components/Medidas'
 import Administracao from './paginas/components/Administracao'
 import Mensagens from './paginas/components/Mensagens'
 import {Detalhes} from './paginas/components/Detalhes'
-
+import SignupPage from './paginas/components/Autentication/SignupPage'
 
 
 
@@ -20,6 +20,8 @@ function App(){
          <Route path='/Administracao' element={<Administracao></Administracao>}></Route>
          <Route path='/Mensagens' element={<Mensagens></Mensagens>}></Route>
          <Route path='/Medidas/:id' element={<Detalhes></Detalhes>}></Route>
+         <Route path='/cadastro' element={<SignupPage></SignupPage>}></Route>
+
       </Routes>
     </Router>
   )

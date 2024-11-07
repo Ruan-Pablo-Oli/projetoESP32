@@ -32,10 +32,10 @@ const NavBar = () =>{
                         ))}
                     </ul>
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <a href="#" className="py-2 px-3 border rounded-md">
+                        <a href="" className="py-2 px-3 border rounded-md">
                             Sign in
                         </a>
-                        <a href="#" className="bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md">
+                        <a href="cadastro" className="bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md">
                             Create an account
                         </a>
                     </div>
