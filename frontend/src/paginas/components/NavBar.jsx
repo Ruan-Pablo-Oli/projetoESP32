@@ -4,6 +4,10 @@ import {useState} from 'react'
 
 import logo from '../assets/logo.png'
 import { navItems } from '../../constants'
+import { LogoutButton } from '@userfront/react'
+
+
+
 
 const NavBar = () =>{
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -32,11 +36,14 @@ const NavBar = () =>{
                         ))}
                     </ul>
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <a href="" className="py-2 px-3 border rounded-md">
-                            Sign in
-                        </a>
-                        <a href="cadastro" className="bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md">
-                            Create an account
+                            <a href="/login" className="py-2 px-3 border rounded-md">
+                                Sign in
+                            </a>
+                            <a href="/cadastro" className="bg-gradient-to-r from-purple-500 to-purple-800 py-2 px-3 rounded-md">
+                                Create an account
+                            </a>
+                        <a href="">
+                            <LogoutButton></LogoutButton>
                         </a>
                     </div>
                     <div className="lg:hidden md:flex flex-col justify-end">
@@ -62,6 +69,9 @@ const NavBar = () =>{
                                 Create An Account
                             </a>
                         </div>
+
+                        <LogoutButton></LogoutButton>
+
                     </div>
                 )}
             </div> 

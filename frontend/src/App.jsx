@@ -7,6 +7,7 @@ import Administracao from './paginas/components/Administracao'
 import Mensagens from './paginas/components/Mensagens'
 import {Detalhes} from './paginas/components/Detalhes'
 import SignupPage from './paginas/components/Autentication/SignupPage'
+import LoginPage from './paginas/components/Autentication/loginPage'
 
 
 
@@ -21,6 +22,8 @@ function App(){
          <Route path='/Mensagens' element={<Mensagens></Mensagens>}></Route>
          <Route path='/Medidas/:id' element={<Detalhes></Detalhes>}></Route>
          <Route path='/cadastro' element={<SignupPage></SignupPage>}></Route>
+        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+
 
       </Routes>
     </Router>
