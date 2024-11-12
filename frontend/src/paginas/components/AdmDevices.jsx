@@ -3,12 +3,16 @@ import {useApi} from '../../hooks/useApi'
 import React,{useState} from 'react'
 import Modal from './Modal'
 import { editRegistro,deleteRegistro } from '../../services/api'
+import Userfront from "@userfront/core";
+import { jwtDecode } from 'jwt-decode'
 
 
 
 
 const AdmDevices = ({setActiveTab}) => {   
-    const {data} = useApi('/devices')
+    const userData = jwtDecode(Userfront.tokens.idToken)
+    const email = userData.email
+    const {data} = useApi(`/devices/${email}`)
     const [showModal, setShowModal] = useState(false);
     const [id,setId] = useState()
     const [description,setDescription] = useState()

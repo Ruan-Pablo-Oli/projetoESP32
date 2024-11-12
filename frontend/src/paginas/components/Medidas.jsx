@@ -3,6 +3,8 @@ import {useApi} from '../../hooks/useApi'
 import {Link} from 'react-router-dom'
 import Userfront from "@userfront/core";
 import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode'
+
 
 export const Medidas = () => {
   
@@ -16,19 +18,18 @@ export const Medidas = () => {
     }
   })
 
-  const {data} = useApi('/devices')
+  const userData = jwtDecode(Userfront.tokens.idToken)
+  const email = userData.email
+  const {data} = useApi(`/devices/${email}`)
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
-      <div className="text-center">
-        <span className="bg-neutral-900 text-purple-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
-          Medidas
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking wide">Lista de 
+    <div className="relative border-b border-neutral-800 min-h-[800px]">
+      <div className="flex flex-wrap items-center text-center justify-center  mt-20 lg:mt-20">
+       { data?.data?.message.length <= 0 ? <div><span className="bg-neutral-900 text-purple-500 rounded-full  text-lg font-medium px-2 py-1 uppercase">
+          Sem dispositivos cadastrados
+        </span>  </div> : <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking wide">Lista de
           <span className="bg-gradient-to-r from-purple-500 to-blue-800 text-transparent bg-clip-text">
             {" "} Dispostivos</span>
-        </h2>
-      </div>
-      <div className="flex flex-wrap items-center justify-center  mt-10 lg:mt-20">
+        </h2>}
       {data?.data?.message?.map((dispositivo,index)=>(
           <div key={index} className="sm:1/2 lg:w-1/6 mr-5 ">
           <div className="flex flex-wrap " >

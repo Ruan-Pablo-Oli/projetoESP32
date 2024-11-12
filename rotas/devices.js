@@ -15,6 +15,23 @@ router.get('/',async (req,res)=>{
     }
 })
 
+router.get('/:email', async (req, res) => {
+    try {
+        const listaDevices = await Device.find(
+            {email:req.params.email}
+        )
+
+        res.json({
+            sucess: true,
+            message: listaDevices
+        })
+    } catch (err) {
+
+    }
+})
+
+
+
 router.patch('/:id',async (req,res) =>{
     try{
         const updateDevice = await Device.updateOne(

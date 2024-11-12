@@ -1,10 +1,16 @@
 import React from 'react'
 import {useApi} from '../../hooks/useApi'
+import Userfront from "@userfront/core";
+import { jwtDecode } from 'jwt-decode'
 
 
 const  ListaDevices = ({setActiveTab}) => {
 
-  const {data} = useApi('/devices')
+
+  const userData = jwtDecode(Userfront.tokens.idToken)
+  const email = userData.email
+  
+  const {data} = useApi(`/devices/${email}`)
   return (
     data?.data?.message.length > 0 ?
     <div>
