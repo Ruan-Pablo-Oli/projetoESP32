@@ -1,6 +1,9 @@
 import React,{useEffect} from 'react'
 import Userfront from "@userfront/core";
 import { useNavigate } from 'react-router-dom';
+import { FormsContatos } from './FormsContatos';
+
+
 export const Mensagens = () => {
 
 
@@ -14,7 +17,9 @@ export const Mensagens = () => {
     }
   })
   return (
-    <div>Mensagens</div>
+    <div className='relative mt-40'>
+      <FormsContatos></FormsContatos>
+    </div>
   )
 }
 
